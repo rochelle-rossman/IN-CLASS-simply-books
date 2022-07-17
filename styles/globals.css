@@ -8,3 +8,12 @@ body {
   border-radius: 50%;
   width: 30px;
 }
+
+.sign-out-btn {
+  margin: 10px;
+}
+
+.profile-img {
+  width: 200px;
+  align-self: center;
+}
