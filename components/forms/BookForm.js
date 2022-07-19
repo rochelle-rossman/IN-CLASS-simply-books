@@ -51,7 +51,7 @@ function BookForm({ obj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Book</h2>
+      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Add'} Book</h2>
       <FloatingLabel controlId="floatingInput1" label="Book Title" className="mb-3">
         <Form.Control type="text" placeholder="Enter a title" name="title" value={formInput.title} onChange={handleChange} required />
       </FloatingLabel>
@@ -102,7 +102,7 @@ function BookForm({ obj }) {
           sale: e.target.checked,
         }))}
       />
-      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Book</Button>
+      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Add'} Book</Button>
     </Form>
   );
 }
