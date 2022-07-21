@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { Badge } from 'react-bootstrap';
 import { viewBookDetails } from '../../api/mergedData';
 
 export default function ViewBook() {
@@ -23,16 +24,21 @@ export default function ViewBook() {
       <div className="text-white ms-5 details">
         <h5>
           {bookDetails.title} by {bookDetails.authorObject?.first_name} {bookDetails.authorObject?.last_name}
-          {bookDetails.authorObject?.favorite ? ' 🤍' : ''}
         </h5>
+        <>
+          {bookDetails.authorObject?.favorite ? (
+            <>
+              <Badge bg="danger">FAVORITE</Badge>
+            </>
+          ) : (
+            ''
+          )}
+        </>
+        <hr />
         Author Email: <a href={`mailto:${bookDetails.authorObject?.email}`}>{bookDetails.authorObject?.email}</a>
         <p>{bookDetails.description || ''}</p>
         <hr />
-        <p>
-          {bookDetails.sale
-            ? `🏷️ Sale $${bookDetails.price}`
-            : `$${bookDetails.price}`}
-        </p>
+        <p>{bookDetails.sale ? `🏷️ Sale $${bookDetails.price}` : `$${bookDetails.price}`}</p>
       </div>
     </div>
   );

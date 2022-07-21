@@ -13,6 +13,16 @@ body {
 }
 
 .profile-img {
-  width: 200px;
-  align-self: center;
+  width: 100px;
+}
+
+.user-icon {
+  border-radius: 50%;
+  width: 45px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  margin: 10px;
 }
