@@ -76,7 +76,7 @@ function BookForm({ obj }) {
               <option
                 key={author.firebaseKey}
                 value={author.firebaseKey}
-                selected={obj.author_id === author.firebaseKey}
+                defaultValue={obj.author_id === author.firebaseKey}
               >
                 {author.first_name} {author.last_name}
               </option>
